@@ -1,0 +1,42 @@
+@import '../../main-style.scss';
+
+.note-card-container {
+  position : relative;
+  background: #fabadf;
+  border-radius: 5px;
+  box-shadow: 0 2px 15px 2px rgba(159, 81, 245, 0.5);
+  transition: box-shadow 0.2s ease-out;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 0 4px rgba(159, 81, 245, 0.25);
+
+    .x-button {
+      opacity: 1; //show the button when hover
+    }
+  }
+
+  .note-card-content {
+    padding: 25px;
+
+    .note-card-title {
+      font-size: 25px;
+      font-weight: bold;
+      color: $purple;
+    }
+  }
+}
+
+.x-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  height: 34px;
+  width: 34px;
+  background-color: $light-red;
+  background-image: url('../../assets/delete_icon.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 4px;
+  opacity: 0; //set the button hidden by default
+}
