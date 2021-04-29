@@ -1,11 +1,10 @@
 <div #container class="note-card-container">
 
   <div class="note-card-content">
-    <h1 class="note-card-title">First Note</h1>
-    <div class="note-card-body">
-      <p>This is my first dude noti note.. with my horrible headache day because of barker Soda the whole day.. grrrrrrrr...
-        Have a nice evening day with no sunshine.. so bye bye for now.. see you again when you see me , Dudeeeee</p>
-      <div class="fade-out-truncation"></div>
+    <h1 class="note-card-title">{{ title }}</h1>
+    <div #bodyText class="note-card-body">
+      <p>{{ body }} </p>
+      <div #truncation class="fade-out-truncation"></div>
     </div>
   </div>
 

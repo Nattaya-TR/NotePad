@@ -30,13 +30,14 @@
 
     .note-card-body {
       position : relative;
-
+      color : #455a18;
       //the maximum height before it's truncated
-      max-height: 100px;
+      max-height: 120px;
       overflow: hidden;
 
       .fade-out-truncation {
         position: absolute;
+        pointer-events: none;
         bottom: 0;
         height: 50%;
         width: 100%;
