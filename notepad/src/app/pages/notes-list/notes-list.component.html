@@ -13,7 +13,14 @@
 
   <!-- call the NoteCard component here-->
   <div class="notes-list">
-    <app-note-card *ngFor="let note of notes" [title]="note.title" [body]="note.body"></app-note-card>
+    <!--here we use the index for retrieving the ID for link to route for updating the note-->
+    <app-note-card 
+    *ngFor="let note of notes; index as i" 
+    routerLink = {{i}}
+    (delete) = "deleteNote(i)"
+    [title]= "note.title" 
+    [body]= "note.body">
+  </app-note-card>
   
   </div>
 

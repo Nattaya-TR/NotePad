@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild, ElementRef, Renderer2, Input, AfterViewInit} from '@angular/core';
+import {Component, OnInit, ViewChild, ElementRef, Renderer2, Input, AfterViewInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-note-card',
@@ -9,6 +9,10 @@ export class NoteCardComponent implements OnInit {
 
   @Input() title: string;
   @Input() body: string;
+  
+
+  @Output('delete') deleteEvent: EventEmitter<void> = new EventEmitter<void>();
+  
 
   //getting reference from html
   @ViewChild('truncation', {static : true}) truncation: ElementRef;
@@ -28,6 +32,10 @@ export class NoteCardComponent implements OnInit {
     } else {
       this.renderer.setStyle(this.truncation.nativeElement, 'display', 'none');
     }
+  }
+
+  onXbuttonClick() {
+    this.deleteEvent.emit();
   }
 
 }
