@@ -10,8 +10,6 @@ export class NoteCardComponent implements OnInit {
   @Input() title: string;
   @Input() body: string;
   
-
-  @Output('delete') deleteEvent: EventEmitter<void> = new EventEmitter<void>();
   
 
   //getting reference from html
@@ -32,10 +30,6 @@ export class NoteCardComponent implements OnInit {
     } else {
       this.renderer.setStyle(this.truncation.nativeElement, 'display', 'none');
     }
-  }
-
-  onXbuttonClick() {
-    this.deleteEvent.emit();
   }
 
 }
